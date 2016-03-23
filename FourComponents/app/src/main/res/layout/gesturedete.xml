@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="GestureDetector手势识别，仅在控件范围内有效\n包含如下动作：\nOnSimpleTapListener\n单击，抬起，短按，长按，滚动，滑动\n OnDoubleTapListener\n 双击，双击按下和抬起，单击确认"
+        android:id="@+id/textView" />
+</LinearLayout>

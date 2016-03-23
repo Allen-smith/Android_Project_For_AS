@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <Button
+        android:onClick="doClick"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="判断网络状态"
+        android:id="@+id/btn_judgyNet" />
+    <Button
+        android:onClick="doClick"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开关wifi"
+        android:id="@+id/btn_OCwifi" />
+    <Button
+        android:onClick="doClick"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取系统音量"
+        android:id="@+id/btn_getsound" />
+</LinearLayout>
