@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +21,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
-    Calendar current = Calendar.getInstance();
+    Calendar current ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,24 +47,28 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         //指定启动AlarmActivity组件
-                        Intent intent = new Intent(MainActivity.this,AlarmActivity.class);
+                        Intent intent = new Intent(MainActivity.this,AlarmReceiver.class);
                         //创建PendingIntent对象
                         PendingIntent pi = PendingIntent.getActivity(MainActivity.this, 0, intent, 0);
+
                         Calendar c = Calendar.getInstance();
                         c.setTimeInMillis(System.currentTimeMillis());
                         //根据用户选择时间来设置Calendar对象
                         c.set(Calendar.HOUR,hourOfDay);
                         c.set(Calendar.MINUTE,minute);
+                        Log.i("tag","hourOfDay: "+hourOfDay+" minute: "+minute);
                         //获取AlarmManager对象
                         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
                         //设置AlarmManager将在Calendar对应的时间启动指定组件
                         alarmManager.set(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pi);
                         //显示闹钟设置成功的提示信息
                         Toast.makeText(MainActivity.this,"闹钟设置成功",Toast.LENGTH_SHORT).show();
+
                     }
                 },current.get(Calendar.HOUR_OF_DAY),current.get(Calendar.MINUTE),false).show();
             }
         });
+        Log.i("tag","finalsh");
     }
 
     @Override

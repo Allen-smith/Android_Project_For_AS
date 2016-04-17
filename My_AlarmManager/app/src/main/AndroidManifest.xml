@@ -18,9 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".AlarmActivity"
             android:label="AlarmActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <receiver android:name=".AlarmReceiver" android:process=":remote"/>
     </application>
 
 </manifest>

@@ -15,6 +15,8 @@ public class AlarmActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("tag", "1111111");
+        setContentView(R.layout.clock);
         //加载音乐，并播放
 //        mediaPlayer = MediaPlayer.create(this,R)
 //        mediaPlayer.setLooping(true);
